@@ -152,3 +152,39 @@ Response: {
 - Form submission shows alert (will connect to backend)
 - Demo audio player simulates playback (no actual audio file yet)
 - All images sourced from Unsplash/Pexels via vision_expert_agent
+
+## Updates - Branding & Calendly Integration (Dec 2024)
+
+### Changes Implemented:
+1. **Logo Rebranding**
+   - Changed from "AI Receptionist" to "Vult0"
+   - Applied Saira Stencil One font (Google Fonts) - logo only
+   - Updated header and footer branding
+   - Increased logo size for better visibility
+
+2. **Removed Sign In Button**
+   - Removed from header navigation
+   - Simplified header to focus on primary CTA (Book Demo)
+
+3. **Calendly Integration**
+   - Integrated Calendly popup widget: https://calendly.com/harshit-vult0/30min
+   - Added Calendly script to public/index.html
+   - Updated all "Book Demo" buttons to trigger Calendly popup:
+     * Header "Book Demo" button
+     * Hero CTA "Book Your Free Demo Now"
+     * ROI Calculator "Book Demo - Recover This Revenue"
+     * Final CTA form submission
+   - Prefills user data (name, email) from form to Calendly
+   - Smooth popup overlay experience (no new tabs)
+
+### Files Modified:
+- `/app/frontend/public/index.html` - Added Calendly widget scripts
+- `/app/frontend/src/components/LandingPage.jsx` - Updated logo, removed Sign In, added Calendly handlers
+- `/app/frontend/src/components/ROICalculator.jsx` - Added Calendly integration
+- `/app/frontend/src/styles/landing.css` - Updated logo font styling
+
+### Technical Details:
+- Calendly widget loads asynchronously
+- Fallback to new tab if Calendly script hasn't loaded
+- Data prefill for seamless user experience
+- All CTAs now lead to immediate booking action

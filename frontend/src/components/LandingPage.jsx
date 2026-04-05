@@ -26,9 +26,33 @@ const LandingPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Mock form submission - will connect to backend later
-    alert(`Thanks ${formData.name}! We'll contact you shortly to schedule your demo.`);
+    // Open Calendly after form submission
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({ 
+        url: 'https://calendly.com/harshit-vult0/30min',
+        prefill: {
+          name: formData.name,
+          email: formData.email,
+          customAnswers: {
+            a1: formData.phone,
+            a2: formData.firm
+          }
+        }
+      });
+    } else {
+      window.open('https://calendly.com/harshit-vult0/30min', '_blank');
+    }
     setFormData({ name: '', email: '', phone: '', firm: '' });
+  };
+
+  const openCalendly = () => {
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({ url: 'https://calendly.com/harshit-vult0/30min' });
+    } else {
+      // Fallback if Calendly script hasn't loaded yet
+      window.open('https://calendly.com/harshit-vult0/30min', '_blank');
+    }
+    return false;
   };
 
   const scrollToDemo = () => {
@@ -54,7 +78,7 @@ const LandingPage = () => {
             </nav>
 
             <div className="header-actions">
-              <button className="btn-primary" onClick={scrollToDemo}>Book Demo</button>
+              <button className="btn-primary" onClick={openCalendly}>Book Demo</button>
               <button 
                 className="mobile-menu-btn" 
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -97,11 +121,11 @@ const LandingPage = () => {
             </p>
 
             <div className="hero-cta-group">
-              <button className="btn-primary btn-large" onClick={scrollToDemo}>
-                See How Many Cases You're Losing
+              <button className="btn-primary btn-large" onClick={openCalendly}>
+                Book Your Free Demo Now
                 <ArrowRight size={20} style={{ marginLeft: '0.5rem' }} />
               </button>
-              <button className="btn-secondary btn-large">
+              <button className="btn-secondary btn-large" onClick={scrollToDemo}>
                 <Play size={20} style={{ marginRight: '0.5rem' }} />
                 Watch Demo
               </button>

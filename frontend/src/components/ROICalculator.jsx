@@ -12,6 +12,14 @@ const ROICalculator = () => {
     recoveredCases: 0
   });
 
+  const openCalendly = () => {
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({ url: 'https://calendly.com/harshit-vult0/30min' });
+    } else {
+      window.open('https://calendly.com/harshit-vult0/30min', '_blank');
+    }
+  };
+
   useEffect(() => {
     calculateROI();
   }, [callsPerWeek, conversionRate, avgCaseValue]);
@@ -151,8 +159,8 @@ const ROICalculator = () => {
         </div>
 
         <div className="roi-cta">
-          <button className="btn-primary btn-large">
-            Recover This Revenue
+          <button className="btn-primary btn-large" onClick={openCalendly}>
+            Book Demo - Recover This Revenue
           </button>
         </div>
       </div>
