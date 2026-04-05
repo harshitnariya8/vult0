@@ -66,7 +66,6 @@ const LandingPage = () => {
         <div className="container">
           <div className="header-content">
             <div className="logo-section">
-              <Phone size={28} strokeWidth={2.5} />
               <span className="logo-text">Vult0</span>
             </div>
 
@@ -351,47 +350,14 @@ const LandingPage = () => {
               — just not yours.
             </h2>
             
-            <form onSubmit={handleSubmit} className="cta-form">
-              <div className="form-grid">
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  required
-                  className="form-input"
-                />
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  required
-                  className="form-input"
-                />
-                <input
-                  type="tel"
-                  placeholder="Phone Number"
-                  value={formData.phone}
-                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                  required
-                  className="form-input"
-                />
-                <input
-                  type="text"
-                  placeholder="Law Firm Name"
-                  value={formData.firm}
-                  onChange={(e) => setFormData({...formData, firm: e.target.value})}
-                  className="form-input"
-                />
-              </div>
-              <button type="submit" className="btn-primary btn-large btn-cta">
-                Book a 15-min Demo
+            <div className="cta-button-wrapper">
+              <button onClick={openCalendly} className="btn-primary btn-large btn-cta">
+                Book a Demo
                 <ArrowRight size={20} style={{ marginLeft: '0.5rem' }} />
               </button>
-            </form>
+            </div>
 
-            <p className="caption" style={{ color: 'rgba(255,255,255,0.8)', marginTop: '1rem' }}>
+            <p className="caption" style={{ color: 'rgba(255,255,255,0.8)', marginTop: '1.5rem' }}>
               No credit card required • Setup in 15 minutes • Live same day
             </p>
           </div>
@@ -403,11 +369,10 @@ const LandingPage = () => {
         <div className="container">
           <div className="footer-content">
             <div className="footer-brand">
-              <Phone size={28} strokeWidth={2.5} />
               <span className="logo-text">Vult0</span>
             </div>
             <p className="caption">
-              © 2024 Vult0. All rights reserved.
+              © 2026 Vult0. All rights reserved.
             </p>
           </div>
         </div>
