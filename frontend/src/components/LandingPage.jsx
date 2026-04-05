@@ -42,8 +42,8 @@ const LandingPage = () => {
         <div className="container">
           <div className="header-content">
             <div className="logo-section">
-              <Phone size={24} strokeWidth={2} />
-              <span className="logo-text">AI Receptionist</span>
+              <Phone size={28} strokeWidth={2.5} />
+              <span className="logo-text">Vult0</span>
             </div>
 
             <nav className="desktop-nav">
@@ -54,7 +54,6 @@ const LandingPage = () => {
             </nav>
 
             <div className="header-actions">
-              <button className="btn-secondary">Sign In</button>
               <button className="btn-primary" onClick={scrollToDemo}>Book Demo</button>
               <button 
                 className="mobile-menu-btn" 
@@ -380,11 +379,11 @@ const LandingPage = () => {
         <div className="container">
           <div className="footer-content">
             <div className="footer-brand">
-              <Phone size={24} />
-              <span className="logo-text">AI Receptionist</span>
+              <Phone size={28} strokeWidth={2.5} />
+              <span className="logo-text">Vult0</span>
             </div>
             <p className="caption">
-              © 2024 AI Receptionist. All rights reserved.
+              © 2024 Vult0. All rights reserved.
             </p>
           </div>
         </div>

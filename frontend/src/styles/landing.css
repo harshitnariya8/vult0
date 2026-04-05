@@ -1,5 +1,8 @@
 /* AI Receptionist Landing Page Styles - Warm AI Design System */
 
+/* Import Saira Stencil font for logo */
+@import url('https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap');
+
 /* ========================================
    Foundation Colors & Variables
    ======================================== */
@@ -247,9 +250,10 @@ body {
 }
 
 .logo-text {
-  font-weight: 600;
-  font-size: 1.125rem;
-  letter-spacing: -0.01em;
+  font-family: 'Saira Stencil One', system-ui;
+  font-weight: 400;
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
 }
 
 .desktop-nav {
